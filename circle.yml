@@ -10,7 +10,7 @@ dependencies:
 
   cache_directories:
     - "~/.stack"
-    - "./stack-work"
+    - "./.stack-work"
 
   override:
     - stack build --no-system-ghc --install-ghc --only-dependencies
@@ -32,7 +32,7 @@ deployment:
     branch: hakyll
     commands:
       - git config --global user.email emil.gedda@emilgedda.se
-      - git config --global user.name Emil Gedda (CircleCI)
+      - git config --global user.name "Emil Gedda (CircleCI)"
       - cd _site/ && git status
       - cd _site/ && git add --all
       - cd _site/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
