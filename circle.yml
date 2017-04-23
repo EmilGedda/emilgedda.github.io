@@ -8,21 +8,25 @@ machine:
 
 dependencies:
 
+  cache_directories:
+    - "~/.stack"
+    - "./stack-work"
+
   override:
-    - cabal update
-    - cabal install --only-dependencies -j
-    - cabal configure
+    - curl -sSL https://get.haskellstack.org/ | sh
+    - stack setup
+    - stack build --no-system-ghc --install-ghc --only-dependencies
 
 
 test:
 
   override:
-    - cabal build
+    - stack build --no-system-ghc --install-ghc
   post:
     - git submodule init
     - git submodule update
     - cd _site/ && git checkout master
-    - cabal run build
+    - stack build
 
 deployment:
 
