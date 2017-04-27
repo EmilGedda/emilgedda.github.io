@@ -14,8 +14,6 @@ dependencies:
 
   override:
     - stack build --no-system-ghc --install-ghc --only-dependencies
-    - sudo apt-get update 
-    - sudo apt-get install -q -y texlive-full
 
 
 test:
