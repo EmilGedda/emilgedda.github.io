@@ -15,6 +15,7 @@ dependencies:
 
   override:
     - stack build --no-system-ghc --install-ghc --only-dependencies
+    - mkdir -p ~/.aptcache/partial
     - sudo apt-get -o dir::cache::archives="/home/ubuntu/.aptcache" update 
     - sudo apt-get -o dir::cache::archives="/home/ubuntu/.aptcache" install -q -y texlive-full
 
