@@ -1,0 +1,29 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{parskip}
+\usepackage[colorlinks=true, allcolors=darkblue, pdfborder={0 0 0}]{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{$author$}
+\fancyhead[R]{$title$}
+\fancyfoot[C]{\thepage~of~\pageref*{LastPage}}
+\fancyfoot[L]{\url{https://blog.emilgedda.se/}}
+\fancyfoot[R]{$date$}
+\renewcommand{\footrulewidth}{0.4pt}
+\definecolor{darkblue}{RGB}{0,0,238}
+\def\tightlist{}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+$body$
+\end{document}
