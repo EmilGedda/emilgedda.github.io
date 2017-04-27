@@ -11,10 +11,12 @@ dependencies:
   cache_directories:
     - "~/.stack"
     - "./.stack-work"
+    - "~/.aptcache"
 
   override:
     - stack build --no-system-ghc --install-ghc --only-dependencies
-
+    - sudo apt-get -o dir::cache::archives="/home/ubuntu/.aptcache" update 
+    - sudo apt-get -o dir::cache::archives="/home/ubuntu/.aptcache" install -q -y texlive-full
 
 test:
 
